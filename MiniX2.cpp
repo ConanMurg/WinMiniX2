@@ -2,9 +2,13 @@
 #include "MiniX2.h"
 #include "stringex.h"
 #include <time.h>
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
 
 CMiniX2::CMiniX2(void)
 {
+	//
+	PrintToOutputWindow("CMiniX2 - MiniX2.cpp\n");
+
 }
 
 CMiniX2::~CMiniX2(void)

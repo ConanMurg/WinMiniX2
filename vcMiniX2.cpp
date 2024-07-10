@@ -46,6 +46,7 @@ CWizApp theApp;
 
 BOOL CWizApp::InitInstance()
 {
+	PrintToOutputWindow("InitInstance - vcMiniX2.cpp\n");
 
 	// Standard initialization
 	// If you are not using these features and wish to reduce the size
@@ -55,6 +56,8 @@ BOOL CWizApp::InitInstance()
 
 	CMiniX2Dlg Dlg(NULL);
 	m_pMainWnd = &Dlg;
+
+	//PrintToOutputWindow("InitInstance2 - vcMiniX2.cpp\n");
 	
 	//CHardwarePage HardwarePage;
 	//CSystemPage SystemPage;
@@ -67,14 +70,15 @@ BOOL CWizApp::InitInstance()
 	CConnectPage ConnectPage;
 	CMiniXPage MiniXPage;
 	CAdvancedPage AdvancedPage;
-
-	PrintToOutputWindow("Adding Pages\n");
+	
+	PrintToOutputWindow("Test - vcMiniX2.cpp\n");
 	
 	Dlg.AddPage(&ConnectPage, CConnectPage::IDD);
 	Dlg.AddPage(&MiniXPage, CMiniXPage::IDD);
 	Dlg.AddPage(&AdvancedPage, CAdvancedPage::IDD);
 
-	PrintToOutputWindow("Pages Added\n");
+	PrintToOutputWindow("Test2 - vcMiniX2.cpp\n");
+
 
 	if (Dlg.DoModal() == ID_WIZFINISH)
 	{

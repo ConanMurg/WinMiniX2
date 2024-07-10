@@ -7,6 +7,7 @@
 #include "MiniX2Dlg.h"
 #include ".\advancedpage.h"
 #include "MSecTimer.h"
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
 
 CAdvancedPage *AdvancedPage = NULL;
 
@@ -25,7 +26,7 @@ CAdvancedPage::CAdvancedPage(CWnd* pParent /*=NULL*/)
 	: CWizardPage(CAdvancedPage::IDD, pParent)
 {
 //	m_pParentMX2 = pParentDP5;
-
+	PrintToOutputWindow("CAdvancedPage - AdvancedPage.cpp\n");
 }
 
 void CAdvancedPage::DoDataExchange(CDataExchange* pDX)
@@ -89,9 +90,9 @@ END_MESSAGE_MAP()
 
 BOOL CAdvancedPage::OnInitDialog()
 {
+	PrintToOutputWindow("OnInitDialog- AdvancedPage.cpp\n");
+
 	CDialog::OnInitDialog();
-
-
 
 	// TODO: Add extra initialization here
 

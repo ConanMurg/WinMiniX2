@@ -7,6 +7,8 @@
 #include "MiniXPage.h"
 #include ".\minixpage.h"
 #include "MSecTimer.h"
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
+
 CMiniXPage *MiniXPage = NULL;
 
 #ifdef _DEBUG
@@ -21,7 +23,8 @@ static char THIS_FILE[] = __FILE__;
 CMiniXPage::CMiniXPage(CWnd* pParent /*=NULL*/)
 	: CWizardPage(CMiniXPage::IDD, pParent)
 {
-//
+	//
+	PrintToOutputWindow("CMiniXPage - MiniXPage.cpp\n");
 }
 
 void CMiniXPage::DoDataExchange(CDataExchange* pDX)
@@ -93,6 +96,8 @@ END_MESSAGE_MAP()
 
 BOOL CMiniXPage::OnInitDialog()
 {
+	PrintToOutputWindow("OnInitDialog - MiniXPage.cpp\n");
+
 	CDialog::OnInitDialog();
 
 	// TODO: Add extra initialization here
@@ -192,11 +197,13 @@ void CMiniXPage::OnOK()
 
 void CMiniXPage::OnSetActive()
 {
+	PrintToOutputWindow("OnSetActive - MiniXPage.cpp\n");
 	m_pParent->SetTitle("Mini-X2 Controller");
 }
 
 void CMiniXPage::OnBnClickedOk()
 {
+	PrintToOutputWindow("OnBnClickedOk - MiniXPage.cpp\n");
     EnableMiniX2CommandButtons(mxcsMX2Exiting);
     if (MiniX2.STATUS_MNX.HV_EN) {
         SetHvAndI(false);
@@ -207,6 +214,7 @@ void CMiniXPage::OnBnClickedOk()
 
 void CMiniXPage::OnBnClickedAdvancedButton()
 {
+	PrintToOutputWindow("OnBnClickedAdvancedButton - MiniXPage.cpp\n");
     CWizardDialog* pSheet = (CWizardDialog*)GetParent();
 	int iPage = pSheet->GetPageIndex(this);
 	pSheet->SetActivePage(iPage + 1);
@@ -215,6 +223,7 @@ void CMiniXPage::OnBnClickedAdvancedButton()
 
 void CMiniXPage::OnTimer(UINT nIDEvent)
 {
+	PrintToOutputWindow("OnTimer - MiniXPage.cpp\n");
 	bool bTubeSet=false;
 	string strStatus("");
 	string strTubeType("");
@@ -303,6 +312,7 @@ void CMiniXPage::TimerControl(UINT uEventId, bool isCreate)
 // ==== Mini-X2 Interlock Control =======================================================================
 //=======================================================================================================
 void CMiniXPage::InterlockDisplay(InterlockViewState ILockView) {
+	PrintToOutputWindow("InterlockDisplay - MiniXPage.cpp\n");
 	GetDlgItem(IDC_INTERLOCK_LABEL)->ShowWindow(SW_HIDE);
 	GetDlgItem(IDC_INTERLOCK_OPEN)->ShowWindow(SW_HIDE);
 	GetDlgItem(IDC_INTERLOCK_CLOSED)->ShowWindow(SW_HIDE);
@@ -330,6 +340,7 @@ void CMiniXPage::InterlockDisplay(InterlockViewState ILockView) {
 
 void CMiniXPage::InterLockStatusTest()
 {
+	PrintToOutputWindow("InterLockStatusTest- MiniXPage.cpp\n");
 	string strStatus;
     bool bUpdateInterlock=true;
 	//INTERLOCK OPEN
@@ -410,6 +421,7 @@ void CMiniXPage::InterLockStatusTest()
 
 void CMiniXPage::UpdateMX2MonitoredDisplayValues()
 {
+	PrintToOutputWindow("UpdateMX2MonitoredDisplayValues - MiniXPage.cpp\n");
     float sngTubePower;
 	string strMiniX2Fault("");
     if (MiniX2.STATUS_MNX.HV_EN != tmrXRayOn_Enabled) {
@@ -453,6 +465,7 @@ void CMiniXPage::HideIsoCurveAndMiniX()
 
 void CMiniXPage::DisplayIsoCurveAndMiniX(MX2TubeTypeEnum iMX)
 {
+	PrintToOutputWindow("DisplayIsoCurveAndMiniX - MiniXPage.cpp\n");
 	HideIsoCurveAndMiniX();
 	UpdateData(false);
 	UpdateWindow();
@@ -496,6 +509,7 @@ void CMiniXPage::DisplayIsoCurveAndMiniX(MX2TubeTypeEnum iMX)
 //GetDlgItem(IDC_HV_ON)->EnableWindow(false);
 void CMiniXPage::OnBnClickedHvOff()
 {
+	PrintToOutputWindow("OnBnClickedHvOff - MiniXPage.cpp\n");
 	CMSecTimer tmr;
 ////    indDisableMonitorCmds = true;
 ////    GetDlgItem(IDC_HV_OFF)->EnableWindow(false);
@@ -509,6 +523,7 @@ void CMiniXPage::OnBnClickedHvOff()
 
 void CMiniXPage::OnBnClickedHvOn()
 {
+	PrintToOutputWindow("OnBnClickedHvOn - MiniXPage.cpp\n");
 	CMSecTimer tmr;
     int msgResponse;
 ////    indDisableMonitorCmds = true;
@@ -529,6 +544,7 @@ void CMiniXPage::OnBnClickedHvOn()
 
 void CMiniXPage::OnBnClickedSethighvoltageandcurrentbutton()
 {
+	PrintToOutputWindow("OnBnClickedSethighvoltageandcurrentbutton - MiniXPage.cpp\n");
 	CMSecTimer tmr;
 ////    double dblValue;
 ////    MiniX_Settings MiniXSettings;
@@ -564,6 +580,7 @@ void CMiniXPage::OnBnClickedSethighvoltageandcurrentbutton()
 
 void CMiniXPage::ShowMX2Status(string strStatus)
 {
+	PrintToOutputWindow("ShowMX2Status - MiniXPage.cpp\n");
 	GetDlgItem(IDC_STATUS_EDIT)->SetWindowText(strStatus.c_str());     // display mx2 status
 }
 
@@ -575,6 +592,7 @@ void CMiniXPage::ShowMX2Status(string strStatus)
 //HV and UA min/max values were read from the tube table
 void CMiniXPage::SetHvAndI(bool bTubeOn)
 {
+	PrintToOutputWindow("SetHvAndI - MiniXPage.cpp\n");
     CMSecTimer tmr;
     float sngHV;
     float sngI;
@@ -611,6 +629,7 @@ void CMiniXPage::SetHvAndI(bool bTubeOn)
 
 void CMiniXPage::EnableMiniX2CommandButtons(unsigned char mxmEnabledCmds)
 {
+	PrintToOutputWindow("EnableMiniX2CommandButtons - MiniXPage.cpp\n");
     int indStartMiniX;
     int indHVOn;
     int indHVOff;
@@ -669,6 +688,7 @@ float CMiniXPage::GetWindowFloat(int nID)
 //check if power is within iso range
 void CMiniXPage::CheckHvAndCurrentDisplayLimits()
 {
+	PrintToOutputWindow("CheckHvAndCurrentDisplayLimits - MiniXPage.cpp\n");
     float sngKV;         //display voltage
     float sngI;          //display current
     bool bLimits;
@@ -769,6 +789,7 @@ void CMiniXPage::CheckHvAndCurrentDisplayLimits()
 
 bool CMiniXPage::SetMX2TubeType(TubeInterlockTableType TubeInterlockTable)
 {
+	PrintToOutputWindow("SetMX2TubeType - MiniXPage.cpp\n");
 	bool bSetMX2TubeType;
     float sngHV;
     float sngWatt;

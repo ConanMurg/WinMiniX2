@@ -8,6 +8,7 @@
 #include "WizardPage.h"
 #include "MiniX2.h"
 
+
 // CAdvancedPage dialog
 class CAdvancedPage : public CWizardPage
 {

@@ -2,9 +2,11 @@
 #include "NetFinder.h"
 #include <time.h>
 #include <math.h>
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
 
 CNetFinder::CNetFinder(void)
 {
+	PrintToOutputWindow("CNetFinder - NetFinder.cpp\n");
 	InitAllEntries();
 	m_rand = 0;
 	LastEntry = NO_ENTRIES;
@@ -49,7 +51,8 @@ COLORREF CNetFinder::AlertByteToCOLORREF(unsigned char alert_level)
 }
 
 CString CNetFinder::EntryToStr(NETDISPLAY_ENTRY *pEntry)
-{	
+{
+	PrintToOutputWindow("EntryToStr - NetFinder.cpp\n");
 	CString strAlertLevel;
 	CString strDeviceType;
 	CString strIpAddress;
@@ -112,7 +115,8 @@ CString CNetFinder::EntryToStr(NETDISPLAY_ENTRY *pEntry)
 }
 
 CString CNetFinder::EntryToStrRS232(NETDISPLAY_ENTRY *pEntry, CString strPort)
-{	
+{
+	PrintToOutputWindow("EntryToStrRS232 - NetFinder.cpp\n");
 	CString strAlertLevel;
 	CString strDeviceType;
 	CString strIpAddress;
@@ -176,7 +180,8 @@ CString CNetFinder::EntryToStrRS232(NETDISPLAY_ENTRY *pEntry, CString strPort)
 }
 
 CString CNetFinder::EntryToStrUSB(NETDISPLAY_ENTRY *pEntry, CString strPort)
-{	
+{
+	PrintToOutputWindow("EntryToStrUSB - NetFinder.cpp\n");
 	CString strAlertLevel;
 	CString strDeviceType;
 	CString strIpAddress;
@@ -241,6 +246,7 @@ CString CNetFinder::EntryToStrUSB(NETDISPLAY_ENTRY *pEntry, CString strPort)
 
 int CNetFinder::FindEntry(unsigned long SockAddr)
 {
+	PrintToOutputWindow("FindEntry - NetFinder.cpp\n");
 	int idxEntry;
 	int EntryFound;
 	EntryFound = NO_ENTRIES;
@@ -255,6 +261,7 @@ int CNetFinder::FindEntry(unsigned long SockAddr)
 
 void CNetFinder::InitEntry(NETDISPLAY_ENTRY *pEntry)
 {
+	PrintToOutputWindow("InitEntry - NetFinder.cpp\n");
 	int idxInit;
 	pEntry->alert_level = 0;
 	
@@ -297,6 +304,7 @@ void CNetFinder::InitEntry(NETDISPLAY_ENTRY *pEntry)
 
 void CNetFinder::InitAllEntries()
 {
+	PrintToOutputWindow("InitAllEntries - NetFinder.cpp\n");
 	for (int idxEntry=0;idxEntry<MAX_ENTRIES;idxEntry++){
 		InitEntry(&DppEntries[idxEntry]);
 	}
@@ -306,6 +314,7 @@ void CNetFinder::InitAllEntries()
 
 void CNetFinder::AddEntry(NETDISPLAY_ENTRY *pEntry, unsigned char *buffer, unsigned int destPort)
 {
+	PrintToOutputWindow("AddEntry - NetFinder.cpp\n");
 	pEntry->alert_level = buffer[1];
 	pEntry->port = destPort;
 
@@ -373,6 +382,7 @@ void CNetFinder::AddEntry(NETDISPLAY_ENTRY *pEntry, unsigned char *buffer, unsig
 
 CString CNetFinder::SockAddr_DlgToStr(CDialog *dlg, int id1, int id2, int id3, int id4)
 {
+	PrintToOutputWindow("SockAddr_DlgToStr - NetFinder.cpp\n");
 	char szAddr[10];
 	CString strAddr;
 	CString strID;
@@ -399,6 +409,8 @@ CString CNetFinder::SockAddr_DlgToStr(CDialog *dlg, int id1, int id2, int id3, i
 
 unsigned int CNetFinder::SockPort_DlgToUInt(CDialog *dlg, int id1)
 {
+	PrintToOutputWindow("SockPort_DlgToUInt - NetFinder.cpp\n");
+
 	char szPort[10];
 	unsigned int Port;
 	CString strPort;

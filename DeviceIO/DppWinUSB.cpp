@@ -1,8 +1,10 @@
 #include "StdAfx.h"
 #include "DppWinUSB.h"
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
 
 CDppWinUSB::CDppWinUSB(void)
 {
+	PrintToOutputWindow("CDppWinUSB [Under class definition]- DppWinUSB.cpp\n");
 	WinUsb_Disabled = false;
 	InitDeviceInfo();
 	NumPipes = -1;
@@ -17,11 +19,13 @@ CDppWinUSB::~CDppWinUSB(void)
 
 void CDppWinUSB::Disable_WinUsb()
 {
+	PrintToOutputWindow("Disable_WinUsb - DppWinUSB.cpp\n");
 	WinUsb_Disabled = true;
 }
 
 void CDppWinUSB::InitDeviceInfo()
 {
+	PrintToOutputWindow("InitDeviceInfo - DppWinUSB.cpp\n");
 	devInfo.deviceHandle = INVALID_HANDLE_VALUE;
 	devInfo.winUSBHandle = NULL;
 	devInfo.deviceConnected = FALSE;
@@ -29,6 +33,7 @@ void CDppWinUSB::InitDeviceInfo()
 
 void CDppWinUSB::CloseDeviceHandle()
 {
+	PrintToOutputWindow("CloseDeviceHandle - DppWinUSB.cpp\n");
 	if ((devInfo.deviceHandle != NULL) && (devInfo.deviceHandle != INVALID_HANDLE_VALUE)) {
 		CloseHandle(devInfo.deviceHandle);
 		devInfo.deviceHandle = NULL;
@@ -37,6 +42,7 @@ void CDppWinUSB::CloseDeviceHandle()
 
 void CDppWinUSB::CloseWinUsbDevice()
 {
+	PrintToOutputWindow("CloseWinUsbDevice - DppWinUSB.cpp\n");
 	if (WinUsb_Disabled) return;
     if (devInfo.winUSBHandle) {
         if (!WinUsb_Free(devInfo.winUSBHandle)) {
@@ -50,6 +56,7 @@ void CDppWinUSB::CloseWinUsbDevice()
 
 BOOL CDppWinUSB::GetDevicePath(LPGUID InterfaceGuid, PCHAR DevicePath, size_t BufLen, DWORD MemberIndex)
 {
+	PrintToOutputWindow("GetDevicePath - DppWinUSB.cpp\n");
 	BOOL bResult = FALSE;
 	HDEVINFO deviceInfo;
 	SP_DEVICE_INTERFACE_DATA interfaceData;
@@ -96,6 +103,7 @@ BOOL CDppWinUSB::GetDevicePath(LPGUID InterfaceGuid, PCHAR DevicePath, size_t Bu
 
 HANDLE CDppWinUSB::OpenDevice(BOOL bSync, DWORD MemberIndex)
 {
+	PrintToOutputWindow("OpenDevice - DppWinUSB.cpp\n");
 	HANDLE hDev = NULL;
 	char devicePath[MAX_DEVPATH_LENGTH];
 	BOOL retVal;
@@ -116,6 +124,7 @@ HANDLE CDppWinUSB::OpenDevice(BOOL bSync, DWORD MemberIndex)
 
 BOOL CDppWinUSB::Initialize_Device(DWORD MemberIndex)
 {
+	PrintToOutputWindow("Initialize_Device - DppWinUSB.cpp\n");
 	BOOL bResult;
 	WINUSB_INTERFACE_HANDLE usbHandle;
 	USB_INTERFACE_DESCRIPTOR ifaceDescriptor;
@@ -182,6 +191,7 @@ BOOL CDppWinUSB::Initialize_Device(DWORD MemberIndex)
 
 DPP_USB_STATUS CDppWinUSB::FindUSBDevice(DWORD MemberIndex)
 {
+	PrintToOutputWindow("FindUSBDevice - DppWinUSB.cpp\n");
 	BOOL bResult;
 	DPP_USB_STATUS USBStatus;	//0=do nothing, 1=new connect, 2=cannot connect
 
@@ -216,6 +226,7 @@ DPP_USB_STATUS CDppWinUSB::FindUSBDevice(DWORD MemberIndex)
 
 int CDppWinUSB::CountDP5WinusbDevices(void) 
 {
+	PrintToOutputWindow("CountDP5WinusbDevices - DppWinUSB.cpp\n");
 	int NumDevices = 0;
     HKEY hKey;
     DWORD retCode;
@@ -260,6 +271,7 @@ int CDppWinUSB::CountDP5WinusbDevices(void)
 
 string CDppWinUSB::USBStatusString(DPP_USB_STATUS USBStatus)
 {
+	PrintToOutputWindow("CountDP5WinusbDevices - DppWinUSB.cpp\n");
 	string strStatus;
 	strStatus = "";
 	switch (USBStatus) {
@@ -275,6 +287,8 @@ string CDppWinUSB::USBStatusString(DPP_USB_STATUS USBStatus)
 
 string CDppWinUSB::DisplayBufferArray(unsigned char buffer[], unsigned long bufSizeIn)
 {
+	PrintToOutputWindow("DisplayBufferArray - DppWinUSB.cpp\n");
+
     unsigned long i;
 	string strVal("");
 	string strMsg("");
@@ -294,24 +308,28 @@ string CDppWinUSB::DisplayBufferArray(unsigned char buffer[], unsigned long bufS
 
 void CDppWinUSB::SaveStringDataToFile(string strData)
 {
-   FILE  *out;
-   string strFilename;
-   string strError;
-   stringex strfn;
+	PrintToOutputWindow("SaveStringDataToFile - DppWinUSB.cpp\n");
 
-   strFilename = "CfgHex.txt";
+	FILE  *out;
+	string strFilename;
+	string strError;
+	stringex strfn;
 
-   if ( (out = fopen(strFilename.c_str(),"w")) == (FILE *) NULL)
-      strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
-   else
-   {
-      fprintf(out,"%s\n",strData.c_str());
-   }
-   fclose(out);
+	strFilename = "CfgHex.txt";
+
+	if ( (out = fopen(strFilename.c_str(),"w")) == (FILE *) NULL)
+		strError = strfn.Format("Couldn't open %s for writing.\n", strFilename.c_str());
+	else
+	{
+		fprintf(out,"%s\n",strData.c_str());
+	}
+	fclose(out);
 }
 
 bool CDppWinUSB::SendPacketUSB(unsigned char Buffer[], DEVICE_INFO TestDevInfo, unsigned char PacketIn[])
 {
+	PrintToOutputWindow("SendPacketUSB - DppWinUSB.cpp\n");
+
     unsigned long bytesWritten; 
 	unsigned long bytesRead;
     int success;

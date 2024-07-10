@@ -26,8 +26,8 @@
 // See vcMiniX2.cpp for the implementation of this class
 //
 
-
 void PrintToOutputWindow(const std::string& message);
+
 
 class CWizApp : public CWinApp
 {

@@ -11,6 +11,7 @@
 #include "WinusbNotify.h"
 #include "SProfile.h"
 #include "SendCommand.h"
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
 
 
 #include ".\msectimer.h"
@@ -76,12 +77,14 @@ END_MESSAGE_MAP()
 
 CMiniX2Dlg::CMiniX2Dlg(CWnd* pParent /*=NULL*/)
 	: CWizardDialog(CMiniX2Dlg::IDD, pParent)
+
 {
 	//{{AFX_DATA_INIT(CMiniX2Dlg)
 		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
 	// Note that LoadIcon does not require a subsequent DestroyIcon in Win32
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+    PrintToOutputWindow("CMiniX2Dlg - MiniXDlg.cpp\n");
 }
 
 void CMiniX2Dlg::DoDataExchange(CDataExchange* pDX)
@@ -106,6 +109,8 @@ END_MESSAGE_MAP()
 
 BOOL CMiniX2Dlg::OnInitDialog() 
 {
+    PrintToOutputWindow("OnInitDialog - MiniXDlg.cpp\n");
+
 	SetPlaceholderID(IDC_SHEETRECT);
 	CWizardDialog::OnInitDialog();
 

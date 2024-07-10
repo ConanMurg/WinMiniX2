@@ -7,7 +7,8 @@
 #include "MiniX2Dlg.h"
 #include ".\connectpage.h"
 #include "DppWinUSB.h"
-#include "DebugUtils.h"
+#include "DebugUtils.h" // MINE - ALLOWS PrintToOutputWindow 
+
 //#include "SProfile.h"
 #define HIDD_MX2_CONNECT                        0x20191
 
@@ -20,6 +21,7 @@ CConnectPage::CConnectPage(CWnd* pParent /*=NULL*/)
 	//{{AFX_DATA_INIT(CHardwarePage)
 		// NOTE: the ClassWizard will add member initialization here
 	//}}AFX_DATA_INIT
+	PrintToOutputWindow("CConnectPage - ConnectPage.cpp\n");
 }
 
 
@@ -68,8 +70,9 @@ void CConnectPage::DoDataExchange(CDataExchange* pDX)
 
 BOOL CConnectPage::OnInitDialog()
 {
+	PrintToOutputWindow("OnInitDialog - ConnectPage.cpp\n");
+
 	CDialog::OnInitDialog();
-	
 
 	bMiniX2Connected = false;
 	GetDlgItem(IDC_CONNECTOK)->ShowWindow(SW_HIDE);
@@ -126,7 +129,8 @@ void CConnectPage::OnBnClickedRadioCommtype2()
 
 void CConnectPage::OnBnClickedButtonFindUsbDevice()
 {
-	PrintToOutputWindow("OnBnClickedButtonFindUsbDevice - ConnectPage.cpp\n");
+	PrintToOutputWindow("\n\nOnBnClickedButtonFindUsbDevice - ConnectPage.cpp\n");
+
 	TRANSMIT_PACKET_TYPE XmtCmd;
     BOOL HaveBuffer;
     BOOL SentPkt;
@@ -236,7 +240,7 @@ void CConnectPage::EnableCommFunctions(int ControlGroup)
 
 void CConnectPage::OnBnClickedButtonCountDevices()
 {
-	PrintToOutputWindow("OnBnClickedButtonCountDevices - ConnectPage.cpp\n");
+	PrintToOutputWindow("\n\nOnBnClickedButtonCountDevices - ConnectPage.cpp\n");
 
 	CDppWinUSB DppWinUSB1;
 	CString cstrNumDevices;
@@ -302,7 +306,7 @@ void CConnectPage::OnDeltaposSpinSelectDevice(NMHDR *pNMHDR, LRESULT *pResult)
 
 void CConnectPage::OnBnClickedButtonCloseDevice()
 {
-	PrintToOutputWindow("OnBnClickedButtonCloseDevice- ConnectPage.cpp\n");
+	PrintToOutputWindow("\n\nOnBnClickedButtonCloseDevice- ConnectPage.cpp\n");
 	DppWinUSB.devInfo.deviceConnected = FALSE;
 	DppWinUSB.CloseWinUsbDevice();
 	WinusbNotify.RemoveDeviceNotification();
@@ -333,7 +337,7 @@ void CConnectPage::OnBnClickedButtonCloseDevice()
 
 void CConnectPage::OnBnClickedConnectOK()
 {
-	PrintToOutputWindow("OnBnClickedConnectOK - ConnectPage.cpp\n");
+	PrintToOutputWindow("\n\nOnBnClickedConnectOK - ConnectPage.cpp\n");
 	OnBnClickedButtonFindUsbDevice();
 	if (bMiniX2Connected) {
 		CWizardDialog* pSheet = (CWizardDialog*)GetParent();
@@ -346,7 +350,7 @@ void CConnectPage::OnBnClickedConnectOK()
 
 void CConnectPage::OnBnClickedCancel()
 {
-	PrintToOutputWindow("OnBnClickedCancel - ConnectPage.cpp\n");
+	PrintToOutputWindow("\n\nOnBnClickedCancel - ConnectPage.cpp\n");
 	m_pParent->OnWizardFinishEx();
 }
 
