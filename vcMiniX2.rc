@@ -1,0 +1,430 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\vcMiniX2.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\vcMiniX2.ico"
+IDI_STATUS_INFO         ICON                    "res\\IDI_STATUS_INFO.ico"
+IDI_RAD32               ICON                    "res\\IDI_RAD32.ico"
+IDI_LOCKCLOSED32        ICON                    "res\\IDI_LOCKCLOSED32.ico"
+IDI_LOCKRESHORTED32     ICON                    "res\\IDI_LOCKRESHORTED32.ico"
+IDI_LOCKOPEN32          ICON                    "res\\IDI_LOCKOPEN32.ico"
+IDB_AMPTEK_LOGO         ICON                    "res\\IDB_AMPTEK_LOGO.ico"
+IDI_ADVANCED_ICON       ICON                    "res\\IDI_ADVANCED_ICON.ico"
+IDI_STOPSIGN            ICON                    "res\\STOP32.ICO"
+IDI_RAD32_HV_ON         ICON                    "res\\RAD32.ico"
+IDI_EXIT32              ICON                    "res\\EXIT32.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 235, 55
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About Mini-X2"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,11,17,21,20
+    LTEXT           "Mini-X2 Version 1.0.0.0",IDC_STATIC,40,10,119,8,
+                    SS_NOPREFIX
+    LTEXT           "Copyright (C) 2018-2019",IDC_STATIC,40,25,119,8
+    DEFPUSHBUTTON   "OK",IDOK,178,7,50,16,WS_GROUP
+END
+
+IDD_WIZARD DIALOGEX 0, 0, 334, 296
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "Mini-X2 Controller"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,202,275,50,14
+    PUSHBUTTON      "Finish",ID_WIZFINISH,258,275,50,14
+    PUSHBUTTON      "Next >",ID_WIZNEXT,147,275,50,14
+    PUSHBUTTON      "< Back",ID_WIZBACK,97,275,50,14
+    CONTROL         "",IDC_SHEETRECT,"Static",SS_ETCHEDFRAME | NOT 
+                    WS_VISIBLE,7,2,317,270
+END
+
+IDW_MINIX2 DIALOGEX 0, 0, 320, 271
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "",IDC_MINX_GROUP,7,3,304,262,0,WS_EX_TRANSPARENT
+    CTEXT           "",IDC_STATUS_EDIT,14,224,292,10,WS_BORDER
+    CTEXT           "Board Temp.°C",IDC_TEMPERATURE_SENSOR_LABEL,150,165,30,
+                    20,0,WS_EX_TRANSPARENT
+    CTEXT           "Power mW",IDC_POWER_MW_LABEL,148,199,35,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "",IDC_TEMPERATURE_SENSOR,150,185,30,10,WS_BORDER,
+                    WS_EX_TRANSPARENT
+    CTEXT           "IDC_SERIAL_NUMBER",IDC_SERIAL_NUMBER,94,29,134,10,0,
+                    WS_EX_TRANSPARENT
+    RTEXT           "INTERLOCK STATUS",IDC_INTERLOCK_LABEL,189,52,84,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "X-RAY ON",IDC_XRAY_ON_LABEL,141,64,40,10,NOT WS_VISIBLE,
+                    WS_EX_TRANSPARENT
+    CTEXT           "",IDC_POWER_MW,150,209,30,10,WS_BORDER
+    CTEXT           "Fault and Interlock Status",IDC_FAULT_DISPLAY_LABEL,197,
+                    66,104,10
+    CTEXT           "Mini-X2",IDC_MINIX2_MAIN_PANEL_LABEL,141,12,39,12,0,
+                    WS_EX_TRANSPARENT
+    CONTROL         330,IDC_AMPTEK_LOGO_PIC,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,14,12,61,28,
+                    WS_EX_TRANSPARENT
+    CONTROL         331,IDC_MINIX_LOGO_PIC,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,242,12,65,28,
+                    WS_EX_TRANSPARENT
+    GROUPBOX        "Set/Monitor High Voltage and Current",
+                    IDC_HIGHVOLTAGEANDCURRENTGROUP,15,75,290,89,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "MIN",IDC_HIGHVOLTAGECONTROLLABEL2,135,85,20,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "MAX",IDC_HIGHVOLTAGECONTROLLABEL3,159,85,20,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "10",IDC_HIGHVOLTAGECONTROLMIN,135,100,20,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "5",IDC_CURRENTCONTROLMIN,135,115,20,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "40",IDC_HIGHVOLTAGECONTROLMAX,159,100,20,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "200",IDC_CURRENTCONTROLMAX,159,115,20,10,0,
+                    WS_EX_TRANSPARENT
+    LTEXT           "0.0",IDC_HIGHVOLTAGEMONITORTEXT,95,134,35,10,WS_BORDER
+    LTEXT           "0.0",IDC_CURRENTMONITORTEXT,95,149,35,10,WS_BORDER
+    CTEXT           "kV",IDC_HIGHVOLTAGECONTROLLABEL,184,100,15,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "kV",IDC_HIGHVOLTAGECONTROLLABEL4,135,134,15,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "uA",IDC_CURRENTCONTROLLABEL,184,115,15,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "uA",IDC_CURRENTCONTROLLABEL2,135,149,15,10,0,
+                    WS_EX_TRANSPARENT
+    RTEXT           "High Voltage Monitor",IDC_HIGHVOLTAGEMONITORLABEL,21,
+                    134,70,10,0,WS_EX_TRANSPARENT
+    RTEXT           "Current Monitor",IDC_CURRENTMONITORLABEL,21,149,70,10,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           ">> Wattage Out Of Range <<",IDC_OUT_OF_RANGE_LBL,31,85,
+                    99,10,NOT WS_VISIBLE,WS_EX_TRANSPARENT
+    CONTROL         "HV ON",IDC_HV_ON,"Button",BS_OWNERDRAW | WS_DISABLED | 
+                    WS_TABSTOP,220,107,80,22
+    CONTROL         "HV OFF",IDC_HV_OFF,"Button",BS_OWNERDRAW | WS_TABSTOP,
+                    220,83,80,22
+    CONTROL         "Exit",IDOK,"Button",BS_OWNERDRAW | WS_TABSTOP,181,132,
+                    119,28
+    EDITTEXT        IDC_SETHIGHVOLTAGECONTROLEDIT,95,100,35,12
+    EDITTEXT        IDC_SETCURRENTCONTROLEDIT,95,115,35,12
+    PUSHBUTTON      "Set High Voltage and Current",
+                    IDC_SETHIGHVOLTAGEANDCURRENTBUTTON,21,100,70,25,
+                    BS_MULTILINE | WS_DISABLED
+    ICON            IDI_LOCKOPEN32,IDC_INTERLOCK_OPEN,276,42,21,20,
+                    SS_REALSIZEIMAGE | NOT WS_VISIBLE | WS_TABSTOP,
+                    WS_EX_TRANSPARENT
+    ICON            IDI_LOCKCLOSED32,IDC_INTERLOCK_CLOSED,276,42,21,20,
+                    SS_REALSIZEIMAGE | NOT WS_VISIBLE | WS_TABSTOP,
+                    WS_EX_TRANSPARENT
+    ICON            IDI_RAD32,IDC_XRAY_ON_PIC,151,42,21,20,SS_REALSIZEIMAGE | 
+                    NOT WS_VISIBLE | WS_TABSTOP,WS_EX_TRANSPARENT
+    ICON            IDI_LOCKRESHORTED32,IDC_INTERLOCK_SHORTED,276,41,21,20,
+                    SS_REALSIZEIMAGE | NOT WS_VISIBLE | WS_TABSTOP,
+                    WS_EX_TRANSPARENT
+    CONTROL         340,IDC_STATIC_ISO_CURVE_50KV,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | NOT WS_VISIBLE | WS_TABSTOP | 0x20,
+                    188,165,115,57,WS_EX_TRANSPARENT
+    PUSHBUTTON      "Advanced",IDC_ADVANCED_BUTTON,120,238,89,15
+    ICON            IDI_STATUS_INFO,IDC_STATUS_INFO_PIC,263,238,21,20,
+                    SS_REALSIZEIMAGE | NOT WS_VISIBLE | WS_TABSTOP,
+                    WS_EX_TRANSPARENT
+    CONTROL         3303,IDC_HW_IMAGE_50KV_4W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,16,165,127,57,
+                    WS_EX_TRANSPARENT
+    CONTROL         3304,IDC_HW_IMAGE_50KV_10W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,16,165,127,57,
+                    WS_EX_TRANSPARENT
+    CONTROL         3305,IDC_HW_IMAGE_70KV_10W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,16,165,127,57,
+                    WS_EX_TRANSPARENT
+    CONTROL         3300,IDC_STATIC_ISO_CURVE_50KV_4W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,188,165,115,57,
+                    WS_EX_TRANSPARENT
+    CONTROL         3301,IDC_STATIC_ISO_CURVE_50KV_10W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,188,165,115,57,
+                    WS_EX_TRANSPARENT
+    CONTROL         3302,IDC_STATIC_ISO_CURVE_70KV_10W,"Static",SS_BITMAP | 
+                    SS_REALSIZEIMAGE | WS_TABSTOP | 0x20,188,165,115,57,
+                    WS_EX_TRANSPARENT
+END
+
+IDW_CONNECT DIALOGEX 0, 0, 320, 173
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "Connect",IDC_CONNECTOK,57,87,84,23,NOT WS_VISIBLE
+    PUSHBUTTON      "Do Not Connect",IDCANCEL,177,91,70,13
+    PUSHBUTTON      "Find Device",IDC_BUTTON_FIND_USB_DEVICE,97,16,50,13
+    EDITTEXT        IDC_EDIT_STATUS2,155,17,161,59,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDFRAME,6,75,146,5,
+                    WS_EX_CLIENTEDGE
+    CTEXT           "FOUND",IDC_STATIC_FOUND2,97,31,50,14,SS_CENTERIMAGE | 
+                    NOT WS_VISIBLE | WS_BORDER
+    PUSHBUTTON      "Close Device",IDC_BUTTON_CLOSE_DEVICE,97,55,50,13
+    CONTROL         "",IDC_SPIN_SELECT_DEVICE,"msctls_updown32",UDS_WRAP | 
+                    UDS_ARROWKEYS,59,55,10,12
+    CTEXT           "",IDC_STATIC_NUM_DEVICES,71,40,21,10,SS_SUNKEN
+    CTEXT           "",IDC_STATIC_NUM_DEVICES2,71,56,21,10,SS_SUNKEN
+    RTEXT           "Select Device",IDC_STATIC_SELECT_USB_DEVICE_LABEL,9,56,
+                    45,8
+    PUSHBUTTON      "Count Devices",IDC_BUTTON_COUNT_DEVICES,9,38,60,13
+    CONTROL         "USB",IDC_RADIO_COMMTYPE2,"Button",BS_AUTORADIOBUTTON,19,
+                    16,26,8,WS_EX_TRANSPARENT
+    CTEXT           "Mini-X2 Connection Status",IDC_STATIC_CONNECTION_STATUS,
+                    8,125,303,12,SS_SUNKEN
+END
+
+IDW_ADVANCED DIALOGEX 0, 0, 320, 267
+STYLE DS_SETFONT | WS_CHILD | WS_DISABLED
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    GROUPBOX        "Advanced Operations",IDC_GROUP_ADVANCED_PAGE,8,2,304,
+                    262,0,WS_EX_TRANSPARENT
+    CTEXT           "Last Time On",IDC_LABEL_ON_TIME,113,191,129,10
+    LTEXT           "Warmup Step",IDC_LABEL_WARMUP_STEP,242,195,61,30,NOT 
+                    WS_VISIBLE | WS_BORDER,WS_EX_TRANSPARENT
+    GROUPBOX        "Advanced Options",IDC_GROUP_ADVANCED_OPTIONS,13,110,89,
+                    84,0,WS_EX_TRANSPARENT
+    CTEXT           "Speaker: ON",IDC_LABEL_ADVANCED_OPTION_STATUS_2,18,169,
+                    79,11,SS_SUNKEN | WS_BORDER
+    CTEXT           "Faults: Enabled",IDC_LABEL_ADVANCED_OPTION_STATUS_1,18,
+                    145,79,11,SS_SUNKEN | WS_BORDER
+    CTEXT           "Limits: Enabled",IDC_LABEL_ADVANCED_OPTION_STATUS_0,18,
+                    120,79,11,SS_SUNKEN | WS_BORDER
+    PUSHBUTTON      "Volume OFF/ON",IDC_BUTTON_MX2_ASCII_CMD_2,18,181,79,10
+    PUSHBUTTON      "Limit Override",IDC_BUTTON_MX2_ASCII_CMD_0,18,132,79,10
+    PUSHBUTTON      "Fault Override",IDC_BUTTON_MX2_ASCII_CMD_1,18,156,79,10
+    PUSHBUTTON      "View Fault Record",IDC_BUTTON_MX2_ADVANCED_4,13,50,89,
+                    15
+    PUSHBUTTON      "View Timestamp Record",IDC_BUTTON_MX2_ADVANCED_3,11,91,
+                    92,15,BS_MULTILINE | NOT WS_VISIBLE
+    PUSHBUTTON      "View Warmup Table",IDC_BUTTON_MX2_ADVANCED_2,13,69,89,
+                    15
+    PUSHBUTTON      "View Tube Interlock Table",IDC_BUTTON_MX2_ADVANCED_1,13,
+                    31,89,15
+    PUSHBUTTON      "View Mini-X2 Status",IDC_BUTTON_MX2_ADVANCED_0,13,12,89,
+                    15
+    PUSHBUTTON      "Done",IDC_BUTTON_MX2_ADVANCED_DONE,241,229,62,28,
+                    BS_MULTILINE
+    EDITTEXT        IDC_EDIT_MX2_ADVANCED_DISPLAY,108,9,198,138,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    GROUPBOX        "Warmup",IDC_GROUP_WARMUP,105,148,204,42,0,
+                    WS_EX_TRANSPARENT
+    CTEXT           "Tube Warmup Recommendations",IDC_LABEL_RUN_MONTHLY_WU,
+                    106,174,200,11
+    PUSHBUTTON      "Daily Warmup",IDC_BUTTON_WARMUP_SEQUENCE_0,110,160,52,
+                    12
+    PUSHBUTTON      "Monthly Warmup",IDC_BUTTON_WARMUP_SEQUENCE_1,171,160,64,
+                    12
+    PUSHBUTTON      "Stop Warmup",IDC_BUTTON_WARMUP_SEQUENCE_2,244,160,56,12
+    GROUPBOX        "Data Block",IDC_GROUP_MISC_DATA_MX2,13,199,221,60,0,
+                    WS_EX_TRANSPARENT
+    EDITTEXT        IDC_EDIT_MISC_DATA_MX2,18,209,173,46,ES_MULTILINE | 
+                    ES_WANTRETURN | WS_VSCROLL
+    PUSHBUTTON      "Read",IDC_BUTTON_READ_MISC_DATA_MX2,196,214,30,10
+    PUSHBUTTON      "Write",IDC_BUTTON_WRITE_MISC_DATA_MX2,196,228,30,10
+    PUSHBUTTON      "Clear",IDC_BUTTON_CLEAR_MISC_DATA_MX2,196,243,30,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "CompanyName", "Amptek"
+            VALUE "FileDescription", "Mini-X2 Controller Application"
+            VALUE "FileVersion", "1, 0, 0, 1"
+            VALUE "InternalName", "vcMiniX2"
+            VALUE "LegalCopyright", "Copyright (C) 2018"
+            VALUE "OriginalFilename", "MiniX2.EXE"
+            VALUE "ProductName", "Mini-X2 X-Ray Tube Controller"
+            VALUE "ProductVersion", "1, 0, 0, 1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_WIZARD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 324
+        BOTTOMMARGIN, 289
+    END
+
+    IDW_MINIX2, DIALOG
+    BEGIN
+        RIGHTMARGIN, 249
+    END
+
+    IDW_CONNECT, DIALOG
+    BEGIN
+        RIGHTMARGIN, 314
+        BOTTOMMARGIN, 141
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST             "res\\vcMiniX2.exe.manifest"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_MINIX_HW_SM         BITMAP                  "res\\IDB_MINIX_HW_SM.bmp"
+IDB_MINI_X_LOGO         BITMAP                  "res\\IDB_MINI_X_LOGO.bmp"
+IDB_MINI_X_50KV         BITMAP                  "res\\IDB_MINI_X_50KV.bmp"
+IDB_MINI_X              BITMAP                  "res\\IDB_MINI_X.bmp"
+IDB_AMPTEK_LOGO_SM      BITMAP                  "res\\IDB_AMPTEK_LOGO_SM.bmp"
+IDB_ISOPOWER_CURVE_50KV_4W BITMAP                  "res\\Isopower Curve 50kV 4W.bmp"
+IDB_ISOPOWER_CURVE_50KV_10W BITMAP                  "res\\Isopower Curve 50kV 10W.bmp"
+IDB_ISOPOWER_CURVE_70KV_10W BITMAP                  "res\\Isopower Curve 70kV 10W.bmp"
+IDB_TUBE_50KV_4W        BITMAP                  "res\\Tube 50kV 4W.bmp"
+IDB_TUBE_50KV_10W       BITMAP                  "res\\Tube 50kV 10W.bmp"
+IDB_TUBE_70KV_10W       BITMAP                  "res\\Tube 70kV 10W.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About Mini-X2..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\vcMiniX2.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

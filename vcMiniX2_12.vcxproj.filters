@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{bd885acf-25fc-4b24-9a2d-823f5a779bd8}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{60f3ad8d-a9b3-4aa6-bb4c-91a8af8077c8}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{da2321ee-cec1-41dd-a89d-5cd3415f20e7}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MX2Wizard\AdvancedPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\AsciiCmdUtilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MX2Wizard\ConnectPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\DP5Protocol.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\DP5Status.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\DppUtilities.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\DppWinUSB.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\FontAttribute.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Label.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniX2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniX2Dlg.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MX2Wizard\MiniXPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\MSecTimer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\NetFinder.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\ParsePacket.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\SendCommand.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SProfile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="StdAfx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="stringex.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Controls\Sxbutton.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="vcMiniX2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="DeviceIO\WinusbNotify.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard\WizardDialog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wizard\WizardPage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="vcMiniX2.rc">
+      <Filter>Source Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MX2Wizard\AdvancedPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\AsciiCmdUtilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MX2Wizard\ConnectPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\DP5Protocol.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\DP5Status.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\DppConst.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\DppUtilities.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\DppWinUSB.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\FontAttribute.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\Label.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniX2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniX2Dlg.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MX2Wizard\MiniXPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\MSecTimer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\NetFinder.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\ParsePacket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\SendCommand.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SProfile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringex.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringSplit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\Sxbutton.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="vcMiniX2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeviceIO\WinusbNotify.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard\WizardDialog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wizard\WizardPage.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Controls\X11Color.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\EXIT32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\hardware.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_AMPTEK_LOGO.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_AMPTEK_LOGO_SM.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_MINI_X.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_MINI_X_50KV.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_MINI_X_LOGO.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDB_MINIX_HW_SM.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_ADVANCED_ICON.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_EXIT32.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_LOCKCLOSED32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_LOCKOPEN32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_LOCKRESHORTED32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_RAD32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_RAD32_HV_ON.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_STATUS_INFO.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\IDI_STOPSIGN.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\ieset.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Isopower Curve 50kV 10W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Isopower Curve 50kV 4W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Isopower Curve 70kV 10W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\plarge.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\psmall.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\RAD32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\STOP32.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Tube 50kV 10W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Tube 50kV 4W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\Tube 70kV 10W.bmp">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\vcMiniX2.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="res\vcMiniX2.rc2">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Manifest Include="res\vcMiniX2.exe.manifest">
+      <Filter>Resource Files</Filter>
+    </Manifest>
+  </ItemGroup>
+</Project>
