@@ -1,2 +1,3 @@
 C:\Users\Conan\Downloads\minix2api\Mini-X2_SDK_Preview\vcMiniX2\Debug\MiniX2.exe
 C:\Users\Conan\Documents\WinMiniX2\Debug\MiniX2.exe
+C:\Users\LattePanda\Downloads\WinMiniX2\Debug\MiniX2.exe

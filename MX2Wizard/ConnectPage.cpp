@@ -155,6 +155,7 @@ void CConnectPage::OnBnClickedButtonFindUsbDevice()
 		}
 	}
 	if (DppWinUSB.devInfo.deviceConnected) {
+		PrintToOutputWindow("\n\nOnBnClickedButtonFindUsbDevice if (DppWinUSB.devInfo.deviceConnected) - ConnectPage.cpp\n");
 		lblDppFound[USB].ShowWindow(SW_SHOW);
 		DppWinUSB.isDppFound = TRUE;
 		XmtCmd = XMTPT_SEND_NETFINDER_PACKET;
@@ -173,6 +174,8 @@ void CConnectPage::OnBnClickedButtonFindUsbDevice()
 			CString cstrDeviceInfo;
 			cstrDeviceInfo.Format("USB Device %d of %d", DppWinUSB.CurrentDevice, DppWinUSB.NumDevices);
 			cstrStatus = FindDppUSB.EntryToStrUSB(&FindDppUSB.DppEntries[0], cstrDeviceInfo);
+			std::string strStd(cstrStatus.GetBuffer());
+			PrintToOutputWindow(strStd);
 			GetDlgItem(IDC_EDIT_STATUS2)->SetWindowText(cstrStatus);
 			iPos = cstrStatus.Find(" - S/N");
 			cstrDeviceType = cstrStatus.Left(iPos);
